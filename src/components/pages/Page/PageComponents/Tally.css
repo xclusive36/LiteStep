@@ -1,0 +1,38 @@
+ion-item {
+    --padding-start: 0px;
+    --inner-padding-end: 0px;
+    animation: bounceIn;
+    animation-duration: 400ms;
+    transition: transform 400ms 0s, opacity 1.25s 0s;
+}
+
+ion-button:focus{
+    outline: none;
+}
+
+.sc-ion-input-ios-h {
+    --padding-end: 0px;
+}
+
+.countinput {
+    --padding-start: .4rem;
+    font-size: x-large;
+}
+
+.label {
+    font-size: small;
+    font-weight: 600;
+}
+
+.sublabel {
+    font-size: x-small !important;
+}
+
+ion-card {
+    margin: 0;
+}
+
+.deleteMe {
+    transform: translateX(100vw);
+    opacity: 0;
+}

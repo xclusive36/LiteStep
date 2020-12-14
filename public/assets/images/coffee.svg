@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4f, 2020-05-01)"
+   sodipodi:docname="coffee.svg"
+   id="svg207"
+   version="1.1"
+   viewBox="0 0 99 66"
+   height="66px"
+   width="99px">
+  <metadata
+     id="metadata213">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>EmptyState</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs211" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg207"
+     inkscape:window-maximized="1"
+     inkscape:window-y="23"
+     inkscape:window-x="37"
+     inkscape:cy="39.70852"
+     inkscape:cx="37.365471"
+     inkscape:zoom="10.136364"
+     showgrid="false"
+     id="namedview209"
+     inkscape:window-height="855"
+     inkscape:window-width="1403"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <title
+     id="title192">EmptyState</title>
+  <g
+     fill-rule="evenodd"
+     fill="none"
+     stroke-width="1"
+     stroke="none"
+     id="Page-1">
+    <g
+       transform="translate(-47.000000, -19.000000)"
+       id="Card---Tasks">
+      <g
+         transform="translate(26.470588, 0.000000)"
+         id="NoTasks">
+        <path
+           fill-rule="evenodd"
+           fill="#FFFFFF"
+           stroke-width="1.47058824"
+           stroke="#75A4FE"
+           id="Shape"
+           d="M85.8823529,45.4411765 C86.3290538,45.4411765 86.7334656,45.6222378 87.0262021,45.9149743 C87.3189387,46.2077109 87.5,46.6121226 87.5,47.0588235 L87.5,47.0588235 L87.5,82.9411765 L60.5882353,83.3823529 L60.1470588,72.1693738 C57.4102872,72.3993227 54.9782127,71.3508688 53.2747923,69.5419084 C51.6898798,67.8587984 50.7352941,65.521455 50.7352941,62.9411765 C50.7352941,60.3745048 51.6794761,58.0483742 53.2138469,56.3655159 C54.875702,54.5428362 57.232462,53.4765333 59.81553,53.7077718 L59.81553,53.7077718 L60.147143,47.0755111 C60.142572,46.6222 60.3244791,46.2113519 60.6208567,45.9149743 C60.9135932,45.6222378 61.318005,45.4411765 61.7647059,45.4411765 L61.7647059,45.4411765 Z M55.5489985,58.9291118 C54.6752315,59.9558887 54.127451,61.3724902 54.127451,62.9411765 C54.127451,64.5367931 54.693657,65.9745419 55.6345241,67.0062526 C56.7266858,68.2038657 58.3230376,68.8652579 60.1674357,68.610594 L59.8332878,57.2629245 C58.1669083,56.9978382 56.6169834,57.6741066 55.5489985,58.9291118 Z" />
+        <path
+           stroke-linejoin="round"
+           stroke-linecap="round"
+           stroke-width="1.47058824"
+           stroke="#A4C3FE"
+           id="line"
+           d="M82.9411765,64.2244945 L82.9411765,67.014591 M82.9411765,50.1068474 L82.9411765,60.8823529" />
+        <path
+           stroke-linejoin="round"
+           stroke-linecap="round"
+           stroke-width="1.47058824"
+           stroke="#75A4FE"
+           id="ground_line"
+           d="M39.4870175,79.7058824 L43.5294118,79.7058824 M106.545841,79.7058824 L108.235294,79.7058824 M90.5882353,79.7058824 L103.78102,79.7058824 M47.0588235,79.7058824 L59.6788833,79.7058824" />
+        <path
+           stroke-linecap="round"
+           stroke-width="1.47058824"
+           stroke="#A4C3FE"
+           id="path198"
+           d="M75.2941176,20.5882353 C73.7254902,23.0667892 72.9411765,25.223652 72.9411765,27.0588235 C72.9411765,30.3271484 75.6787109,31.7908433 75.6787109,35.3311696 C75.6787109,37.1280446 74.7661994,38.912186 72.9411765,40.6835938" />
+        <path
+           stroke-linecap="round"
+           stroke-width="1.47058824"
+           stroke="#A4C3FE"
+           id="path200"
+           d="M68.2352941,27.0588235 C67.7220244,30.3015855 70,30.9013028 70,33.8085768 C70,35.2841492 69.4117647,36.7597217 68.2352941,38.2352941" />
+        <path
+           stroke-linecap="round"
+           stroke-width="1.47058824"
+           stroke="#A4C3FE"
+           id="path202"
+           d="M79.2912741,25.5730124 C78.5141889,27.5843003 78.9507561,28.810236 79.2912741,29.5318244 C80.0191309,31.0742188 81.1764706,32.4056468 81.1764706,33.9751838 C81.1764706,35.7981005 80.5480718,37.5524663 79.2912741,39.2382812" />
+      </g>
+    </g>
+  </g>
+</svg>

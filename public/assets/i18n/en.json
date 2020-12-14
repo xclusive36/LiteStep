@@ -1,0 +1,40 @@
+{
+  "HOME": {
+    "search": "Search",
+    "list": "Packages",
+    "add": "New List",
+    "noItem": "Empty",
+    "start": "Start by creating a new list",
+    "allcaughtup": "You are all caught up!",
+    "coffee": "Relax and take a break",
+    "noresults": "No results found",
+    "adjust": "Try adjusting your search",
+    "resetheader": "Reset Counts?",
+    "resetmessage": "Reset All counts back to 0?",
+    "cancel": "Cancel",
+    "okay": "Okay",
+    "clearheader": "Clear Count",
+    "areyousure": "Are you sure?",
+    "delete": "Delete",
+    "rename": "Rename",
+    "renameas": "Rename as ",
+    "added": " added"
+  },
+  "ITEMS": {
+    "noItem": "No items",
+    "start": "Start by creating a new item",
+    "add": "Add a item",
+    "emptyList": "Open menu"
+  },
+  "PROFILE": {
+    "aboutheader": "About",
+    "about": "About LiteStep",
+    "terms": "Terms of Use",
+    "privacy": "Privacy Policy",
+    "version": "Version",
+    "helpheader": "Help and Feedback",
+    "support": "Get Support",
+    "feedback": "Leave Feedback",
+    "copyright": "© 2019 LiteStep. All rights reserved"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "HOME": {
+    "search": "Suche",
+    "list": "Pakete",
+    "add": "Fügen Sie ein Paket hinzu",
+    "noItem": "Keine Pakete",
+    "start": "Beginnen Sie mit der Erstellung eines Pakets",
+    "allcaughtup": "Ihr seid alle eingeholt!",
+    "coffee": "Entspannen Sie sich und trinken Sie eine Tasse Kaffee",
+    "noresults": "keine Ergebnisse gefunden",
+    "adjust": "Versuchen Sie, Ihre Suche anzupassen",
+    "resetheader": "Zähler zurücksetzen?",
+    "resetmessage": "Alle zurücksetzen zählt wieder auf 0?",
+    "cancel": "Stornieren",
+    "okay": "In Ordnung",
+    "clearheader": "Anzahl löschen",
+    "areyousure": "Bist du sicher?",
+    "delete": "Löschen",
+    "rename": "Umbenennen",
+    "renameas": "Umbenennen in ",
+    "added": " hinzugefügt"
+  },
+  "ITEMS": {
+    "noItem": "Keine Gegenstände",
+    "start": "Beginnen Sie mit dem Erstellen eines Elements",
+    "add": "Fügen Sie einen Artikel hinzu"
+  },
+  "PROFILE": {
+    "aboutheader": "Über",
+    "about": "Über LiteStep",
+    "terms": "Nutzungsbedingungen",
+    "privacy": "Datenschutz-Bestimmungen",
+    "version": "Ausführung",
+    "helpheader": "Hilfe und Feedback",
+    "support": "Hole dir Unterstützung",
+    "feedback": "Hinterlasse Kommentar",
+    "copyright": "© 2019 LiteStep. Alle Rechte vorbehalten"
+  }
+}

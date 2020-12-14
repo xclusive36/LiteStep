@@ -1,6 +1,6 @@
-import Menu from './components/Menu';
-import Page from './pages/Page';
-import React from 'react';
+import Menu from './components/pages/Menu/Menu';
+import Page from './components/pages/Page/Page';
+import React, { useRef } from 'react';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
@@ -25,15 +25,26 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 
 const App: React.FC = () => {
+  const routerRef = useRef<HTMLIonRouterOutletElement | null>(null);
 
   return (
     <IonApp>
       <IonReactRouter>
         <IonSplitPane contentId="main">
+           {/* when="sm"> */}
           <Menu />
-          <IonRouterOutlet id="main">
-            <Route path="/page/:name" component={Page} exact />
-            <Redirect from="/" to="/page/Inbox" exact />
+          <IonRouterOutlet id="main" ref={routerRef}>
+            <Route
+              path='/page/:name'
+              render={
+                (props) => (
+                  <Page {...props}
+                    router={routerRef.current}
+                  />
+                )
+              }
+            />
+            <Redirect from="/" to="/page/Start" exact />
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
