@@ -1,12 +1,12 @@
 import { IonActionSheet } from '@ionic/react';
 import React from 'react';
 import { hapticsImpactLight, hapticsNotification } from '../../../capacitor/haptics';
-import './ActionSheet.css';
+import './HeaderActionSheet.css';
 
-interface ContainerProps { show: boolean, action: any, setShowAlert: any }
+interface ContainerProps { show: boolean, action: any, setShowAlert: any, search: any }
 
 
-const ActionSheet: React.FC<ContainerProps> = (props) => {
+const HeaderActionSheet: React.FC<ContainerProps> = (props) => {
     
     return (
         <IonActionSheet
@@ -31,7 +31,7 @@ const ActionSheet: React.FC<ContainerProps> = (props) => {
             text: 'Search',
             handler: () => {
               hapticsImpactLight();
-              console.log('Search clicked');
+              props.search();
             }
         }, {
           text: 'Cancel',
@@ -46,5 +46,5 @@ const ActionSheet: React.FC<ContainerProps> = (props) => {
     );
   };
   
-  export default ActionSheet;
+  export default HeaderActionSheet;
   

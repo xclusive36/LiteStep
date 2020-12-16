@@ -20,7 +20,7 @@ const PageFooter: React.FC<ContainerProps> = (props) => {
                             <IonButton onClick={() => {
                                 setShowAlert(true);
                                 props.reset();
-                            }} fill="clear" color="danger" expand="block">
+                            }} color="danger" expand="block">
                                 <IonIcon slot="icon-only" icon={refreshOutline}></IonIcon>
                             </IonButton>
                         </IonCol>
@@ -29,14 +29,14 @@ const PageFooter: React.FC<ContainerProps> = (props) => {
                                 onClick={props.pickClick}
                                 color="danger"
                                 className={ !props.pickMode ? 'ion-hide' : '' }
-                                fill="clear"
+                                // fill="clear"
                                 expand="block">
                                 <IonIcon slot="icon-only" icon={grid}></IonIcon>
                             </IonButton>
                             <IonButton
                                 onClick={props.pickClick}
                                 className={ props.pickMode ? 'ion-hide' : '' }
-                                fill="clear"
+                                // fill="clear"
                                 expand="block">
                                 <IonIcon slot="icon-only" icon={gridOutline}></IonIcon>
                             </IonButton>

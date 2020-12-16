@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "LiteStepV2react3",
+  "appId": "com.litestep.litestep",
+  "appName": "LiteStep",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",

@@ -2,16 +2,18 @@ import { IonAlert, IonButton, IonButtons, IonHeader, IonIcon, IonMenuToggle, Ion
 import { arrowBackOutline, ellipsisVertical } from 'ionicons/icons';
 import React, { useState } from 'react';
 import { hapticsImpactLight } from '../../../../capacitor/haptics';
-import ActionSheet from '../ActionSheet';
+import HeaderActionSheet from '../HeaderActionSheet';
 import './Header.css';
+import Search from './Search';
 
-interface ContainerProps { title: string, delete: any, deleteDisabled: boolean }
+interface ContainerProps { title: string, delete: any, deleteDisabled: boolean, searchChange: any }
 
 
 const PageHeader: React.FC<ContainerProps> = (props) => {
 
     const [showAlert, setShowAlert] = useState(false);
     const [showActionSheet, setShowActionSheet] = useState(false);
+    const [search, setSearch] = useState(true);
     
     return (
         <IonHeader>
@@ -32,6 +34,9 @@ const PageHeader: React.FC<ContainerProps> = (props) => {
                         <IonIcon slot="icon-only" color="dark" icon={ellipsisVertical} />
                     </IonButton>
                 </IonButtons>
+            </IonToolbar>
+            <IonToolbar>
+                <Search hide={ search ? 'ion-hide' : '' } searchChange={props.searchChange} />
             </IonToolbar>
             {/* <IonToolbar>
                 <IonGrid>
@@ -82,8 +87,9 @@ const PageHeader: React.FC<ContainerProps> = (props) => {
                   ]}
             />
 
-            <ActionSheet
+            <HeaderActionSheet
                 show={showActionSheet}
+                search={() => setSearch(!search)}
                 action={() => {
                     setShowActionSheet(true)
                     setTimeout(() => {

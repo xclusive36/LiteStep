@@ -1,4 +1,4 @@
-import { IonContent, IonFab, IonFabButton, IonIcon, IonList, IonPage, IonSearchbar } from '@ionic/react';
+import { IonContent, IonFab, IonFabButton, IonIcon, IonList, IonPage } from '@ionic/react';
 import React, { useEffect, useRef, useState } from 'react';
 import { hapticsImpactLight, hapticsNotification } from '../../../capacitor/haptics';
 import { showBar } from '../../../capacitor/keyboard';
@@ -55,6 +55,7 @@ const Page: React.FC<HomePageProps> = (props) => {
             <PageHeader
                 title={category.name} delete={() => deleteCategory()}
                 deleteDisabled={categories.length === 0}
+                searchChange={(ev: any) => setSearchTerm(ev.detail.value?.toString() || '')}
             />
             <IonContent className="ion-padding" ref={contentRef}>
                 <HeaderInput
@@ -72,9 +73,6 @@ const Page: React.FC<HomePageProps> = (props) => {
                         hapticsImpactLight();
                     }}
                 />
-                <IonSearchbar onIonChange={(ev) => {
-                    setSearchTerm(ev.detail.value?.toString() || '');
-                }} />
                 <IonList lines="none">
                     {filterItems(searchTerm, category.items).map((obj, index) => {
                         return (
