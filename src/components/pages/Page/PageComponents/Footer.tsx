@@ -73,7 +73,7 @@ const PageFooter: React.FC<ContainerProps> = (props) => {
                     color='dark'
                     onDidDismiss={() => setShowToast(false)}
                     message={'Reset Complete'}
-                    duration={200}
+                    duration={1000}
                 />
             </IonToolbar>
         </IonFooter>
