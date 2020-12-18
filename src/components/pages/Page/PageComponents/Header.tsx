@@ -6,7 +6,7 @@ import HeaderActionSheet from '../HeaderActionSheet';
 import './Header.css';
 import Search from './Search';
 
-interface ContainerProps { title: string, delete: any, deleteDisabled: boolean, searchChange: any }
+interface ContainerProps { title: string, delete: any, deleteDisabled: boolean, searchChange: any, reorderOption: any }
 
 
 const PageHeader: React.FC<ContainerProps> = (props) => {
@@ -90,6 +90,7 @@ const PageHeader: React.FC<ContainerProps> = (props) => {
             <HeaderActionSheet
                 show={showActionSheet}
                 search={() => setSearch(!search)}
+                reorder={props.reorderOption}
                 action={() => {
                     setShowActionSheet(true)
                     setTimeout(() => {

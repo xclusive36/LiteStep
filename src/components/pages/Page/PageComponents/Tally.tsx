@@ -1,4 +1,4 @@
-import { IonButton, IonCard, IonCol, IonGrid, IonIcon, IonInput, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonRow, IonText } from '@ionic/react';
+import { IonButton, IonCard, IonCol, IonGrid, IonIcon, IonInput, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonReorder, IonRow, IonText } from '@ionic/react';
 import { addOutline, backspaceOutline, ellipsisVertical, removeOutline } from 'ionicons/icons';
 import React, { useState } from 'react';
 import { updateItem } from '../../../../Data/DataServiceComponent';
@@ -66,6 +66,7 @@ const PageTally: React.FC<ContainerProps> = (props) => {
                             </IonCol>
                         </IonRow>
                     </IonGrid>
+                    <IonReorder slot="end" />
                 </IonItem>
 
                 <IonItemOptions side="end" onIonSwipe={() => {sliding.closeOpened();removeItem();}}>

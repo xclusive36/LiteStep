@@ -1,4 +1,4 @@
-import { IonContent, IonFab, IonFabButton, IonIcon, IonList, IonPage } from '@ionic/react';
+import { IonContent, IonFab, IonFabButton, IonIcon, IonList, IonPage, IonReorderGroup } from '@ionic/react';
 import React, { useEffect, useRef, useState } from 'react';
 import { hapticsImpactLight, hapticsNotification } from '../../../capacitor/haptics';
 import { showBar } from '../../../capacitor/keyboard';
@@ -19,6 +19,7 @@ import HeaderInput from './PageComponents/HeaderInput';
 import PageFooter from './PageComponents/Footer';
 import { addOutline } from 'ionicons/icons';
 import { filterItems } from '../../../Functions/FilterArray';
+import { ReorderItems } from '../../../Functions/Reorder';
 
 interface HomePageProps { router: HTMLIonRouterOutletElement | null }
 
@@ -28,6 +29,7 @@ const Page: React.FC<HomePageProps> = (props) => {
     const [showModal, setShowModal] = useState(false);
     const [pickMode, setPickMode] = useState(false);
     const [addMode, setAddMode] = useState(false);
+    const [reorder, setReorder] = useState(true);
     const [searchTerm, setSearchTerm] = useState('');
     const [hideFooter, setHideFooter] = useState(false);
   
@@ -56,6 +58,7 @@ const Page: React.FC<HomePageProps> = (props) => {
                 title={category.name} delete={() => deleteCategory()}
                 deleteDisabled={categories.length === 0}
                 searchChange={(ev: any) => setSearchTerm(ev.detail.value?.toString() || '')}
+                reorderOption={() => setReorder(!reorder)}
             />
             <IonContent className="ion-padding" ref={contentRef}>
                 <HeaderInput
@@ -74,25 +77,27 @@ const Page: React.FC<HomePageProps> = (props) => {
                     }}
                 />
                 <IonList lines="none">
-                    {filterItems(searchTerm, category.items).map((obj, index) => {
-                        return (
-                            <PageTally
-                                obj={obj}
-                                focus={() => {
-                                    showBar();
-                                    setHideFooter(true);
-                                }}
-                                blur={() => setHideFooter(false)}
-                                hide={() => checkPickMode(obj.count)}
-                                change={(event: any) => updateCount(obj, event)}
-                                down={() => countDown(obj)}
-                                up={() => countUp(obj)}
-                                clear={() => countClear(obj)}
-                                openModal={() => {setShowModal(true);setShowModal(false)}}
-                                key={index}
-                            />
-                        )
-                    })}
+                    <IonReorderGroup disabled={reorder} onIonItemReorder={ReorderItems}>
+                        {filterItems(searchTerm, category.items).map((obj, index) => {
+                            return (
+                                <PageTally
+                                    obj={obj}
+                                    focus={() => {
+                                        showBar();
+                                        setHideFooter(true);
+                                    }}
+                                    blur={() => setHideFooter(false)}
+                                    hide={() => checkPickMode(obj.count)}
+                                    change={(event: any) => updateCount(obj, event)}
+                                    down={() => countDown(obj)}
+                                    up={() => countUp(obj)}
+                                    clear={() => countClear(obj)}
+                                    openModal={() => {setShowModal(true);setShowModal(false)}}
+                                    key={index}
+                                />
+                            )
+                        })}
+                    </IonReorderGroup>
                 </IonList>
                 
                 <ItemModal

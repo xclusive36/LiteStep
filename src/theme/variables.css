@@ -115,12 +115,13 @@ http://ionicframework.com/docs/theming/ */
    */
 
   body {
-    --ion-color-primary: #6b9fe8;
-  --ion-color-primary-rgb: 107,159,232;
-  --ion-color-primary-contrast: #000000;
-  --ion-color-primary-contrast-rgb: 0,0,0;
-  --ion-color-primary-shade: #5e8ccc;
-  --ion-color-primary-tint: #7aa9ea;
+    --ion-color-primary: #4A5570;
+    --ion-color-primary-rgb: 74,85,112;
+    --ion-color-primary-contrast: #ffffff;
+    --ion-color-primary-contrast-rgb: 255,255,255;
+    --ion-color-primary-shade: #414b63;
+    --ion-color-primary-tint: #5c667e;
+  
 
     /* --ion-color-primary: #428cff;
     --ion-color-primary-rgb: 66,140,255;
@@ -185,12 +186,12 @@ http://ionicframework.com/docs/theming/ */
     --ion-color-light-shade: #1e2023;
     --ion-color-light-tint: #383a3e;
 
-    --ion-color-pepsired: #C9002B;
-    --ion-color-pepsired-rgb: 201,0,43;
+    --ion-color-pepsired: #5B6A8E;
+    --ion-color-pepsired-rgb: 91,106,142;
     --ion-color-pepsired-contrast: #ffffff;
     --ion-color-pepsired-contrast-rgb: 255,255,255;
-    --ion-color-pepsired-shade: #b10026;
-    --ion-color-pepsired-tint: #ce1a40;
+    --ion-color-pepsired-shade: #505d7d;
+    --ion-color-pepsired-tint: #6b7999;
   
     --ion-color-white: #ffffff;
     --ion-color-white-rgb: 255,255,255;

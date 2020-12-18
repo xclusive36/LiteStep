@@ -3,7 +3,7 @@ import React from 'react';
 import { hapticsImpactLight, hapticsNotification } from '../../../capacitor/haptics';
 import './HeaderActionSheet.css';
 
-interface ContainerProps { show: boolean, action: any, setShowAlert: any, search: any }
+interface ContainerProps { show: boolean, action: any, setShowAlert: any, search: any, reorder: any }
 
 
 const HeaderActionSheet: React.FC<ContainerProps> = (props) => {
@@ -25,7 +25,7 @@ const HeaderActionSheet: React.FC<ContainerProps> = (props) => {
           text: 'Reorder',
           handler: () => {
             hapticsImpactLight();
-            console.log('Reorder clicked');
+            props.reorder();
           }
         }, {
             text: 'Search',
@@ -38,7 +38,7 @@ const HeaderActionSheet: React.FC<ContainerProps> = (props) => {
           role: 'cancel',
           handler: () => {
             hapticsImpactLight();
-            console.log('Cancel clicked');
+            // console.log('Cancel clicked');
           }
         }]}
       >
