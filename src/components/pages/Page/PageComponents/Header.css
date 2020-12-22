@@ -8,3 +8,45 @@
     --padding-start: 1em;
     --padding-end: 1em;
 } */
+
+/* .searchIn {
+    animation: fadeInDown;
+    animation-delay: 0s;
+    animation-duration: .2s;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity .2s linear;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .2s, opacity .2s linear;
+  transition: height 200ms;
+}
+
+.searchOut {
+    animation: fadeOutUp;
+    animation-delay: 0s;
+    animation-duration: .2s;
+    visibility: hidden;
+    transition: visibility 0s .2s, opacity .2s linear;
+    height: 0;
+}
+
+.collapse {
+    transform: scaleY(0);
+    transition: transform 500ms ease-in-out;
+  }
+  .expand {
+    transform: scaleY(1);
+  } */
+
+  .search {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }

@@ -1,4 +1,4 @@
-import { IonContent, IonFab, IonFabButton, IonIcon, IonList, IonPage, IonReorderGroup } from '@ionic/react';
+import { IonContent, IonList, IonPage, IonReorderGroup } from '@ionic/react';
 import React, { useEffect, useRef, useState } from 'react';
 import { hapticsImpactLight, hapticsNotification } from '../../../capacitor/haptics';
 import { showBar } from '../../../capacitor/keyboard';
@@ -17,9 +17,9 @@ import PageTally from './PageComponents/Tally';
 import { categorySnapshot, getCategoryObs, getJunkSnapshot, getPackagesObs, packagesSnapshot, updateJunk } from '../../../Data/DataServiceComponent';
 import HeaderInput from './PageComponents/HeaderInput';
 import PageFooter from './PageComponents/Footer';
-import { addOutline } from 'ionicons/icons';
 import { filterItems } from '../../../Functions/FilterArray';
 import { ReorderItems } from '../../../Functions/Reorder';
+import AnimateFade from './PageComponents/Animate';
 
 interface HomePageProps { router: HTMLIonRouterOutletElement | null }
 
@@ -110,25 +110,21 @@ const Page: React.FC<HomePageProps> = (props) => {
                     <EmptyData arrayLength={setEmptyDataLength(pickMode, category)} displayLength={3} />
                 </div>
                 
-                <IonFab
-                    className={ hideFooter ? 'ion-hide-sm-down' : '' }
-                    vertical="bottom"
-                    horizontal="center"
-                    edge={true}
-                    slot="fixed"
-                >
-                    <IonFabButton
-                        color={ addMode ? 'danger' : 'primary' }
-                        onClick={() => {
-                            setAddMode(!addMode);
-                            hapticsImpactLight();
-                        }}
-                    >
-                        <IonIcon icon={addOutline} />
-                    </IonFabButton>
-                </IonFab>
             </IonContent>
-            <AddCategory
+            <AnimateFade expand={!addMode} element={
+                <AddCategory
+                    hide={ hideFooter || !addMode ? 'ion-padding-top' : 'ion-padding-top' }
+                    formFocus={() => hapticsImpactLight()}
+                    click={(event: any) => {
+                        event.preventDefault();
+                        addItem(event);
+                        setTimeout(() => {
+                            contentRef.current.scrollToBottom(300)
+                        }, 100);
+                    }}
+                />
+            } />
+            {/* <AddCategory
                 hide={ hideFooter || !addMode ? 'ion-padding-top ion-hide-sm-down' : 'ion-padding-top' }
                 formFocus={() => hapticsImpactLight()}
                 click={(event: any) => {
@@ -138,11 +134,16 @@ const Page: React.FC<HomePageProps> = (props) => {
                         contentRef.current.scrollToBottom(300)
                     }, 100);
                 }}
-            />
+            /> */}
             <PageFooter
                 reset={() => hapticsNotification('WARNING')}
-                hide={ hideFooter || addMode ? 'ion-hide-sm-down' : '' }
+                hide={ hideFooter || addMode ? '' : '' }
                 pickMode={pickMode}
+                addMode={addMode}
+                addClick={() => {
+                    setAddMode(!addMode);
+                    hapticsImpactLight();
+                }}
                 pickClick={() => {
                     setPickMode(!pickMode);
                     hapticsImpactLight();

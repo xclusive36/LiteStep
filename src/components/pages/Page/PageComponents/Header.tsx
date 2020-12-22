@@ -1,8 +1,8 @@
-import { IonAlert, IonButton, IonButtons, IonHeader, IonIcon, IonMenuToggle, IonTitle, IonToolbar } from '@ionic/react';
-import { arrowBackOutline, ellipsisVertical } from 'ionicons/icons';
+import { IonAlert, IonButton, IonCol, IonGrid, IonHeader, IonIcon, IonMenuToggle, IonRow, IonToolbar } from '@ionic/react';
+import { chevronBack, reorderThreeOutline, searchOutline, trashOutline } from 'ionicons/icons';
 import React, { useState } from 'react';
-import { hapticsImpactLight } from '../../../../capacitor/haptics';
 import HeaderActionSheet from '../HeaderActionSheet';
+import AnimateFade from './Animate';
 import './Header.css';
 import Search from './Search';
 
@@ -18,52 +18,38 @@ const PageHeader: React.FC<ContainerProps> = (props) => {
     return (
         <IonHeader>
             <IonToolbar>
-                <IonButtons slot="start">
-                    <IonMenuToggle>
-                        <IonButton onClick={() => hapticsImpactLight()}>
-                            <IonIcon slot="icon-only" color="dark" icon={arrowBackOutline} />
-                        </IonButton>
-                    </IonMenuToggle>
-                </IonButtons>
-                <IonTitle>{props.title}</IonTitle>
-                <IonButtons slot="end">
-                    <IonButton onClick={() => {
-                        setShowActionSheet(true);
-                        hapticsImpactLight();
-                    }}>
-                        <IonIcon slot="icon-only" color="dark" icon={ellipsisVertical} />
-                    </IonButton>
-                </IonButtons>
-            </IonToolbar>
-            <IonToolbar>
-                <Search hide={ search ? 'ion-hide' : '' } searchChange={props.searchChange} />
-            </IonToolbar>
-            {/* <IonToolbar>
                 <IonGrid>
                     <IonRow>
                         <IonCol className="ion-hide-md-up">
                             <IonMenuToggle>
-                                <IonButton size="small" expand="block">
-                                    <IonIcon icon={menuOutline} />
+                                <IonButton size="small" color="danger" expand="block">
+                                    <IonIcon slot="icon-only" icon={chevronBack} />
                                 </IonButton>
                             </IonMenuToggle>
                         </IonCol>
                         <IonCol>
-                            <IonButton onClick={() => setShowAlert(true)} disabled={props.deleteDisabled} size="small" fill="outline" expand="block">
-                                <IonIcon slot="icon-only" color="danger" icon={removeCircle} />
+                            <IonButton onClick={() => setSearch(!search)} size="small" color={search ? 'primary' : 'dark'} expand="block">
+                                <IonIcon slot="icon-only" icon={searchOutline} />
                             </IonButton>
                         </IonCol>
                         <IonCol>
-                            <IonButton onClick={props.delete} disabled={props.deleteDisabled} size="small" color="tertiary" expand="block">
-                                <IonIcon icon={reorderThreeOutline} />
+                            <IonButton onClick={props.reorderOption} size="small" color="danger" expand="block">
+                                <IonIcon slot="icon-only" icon={reorderThreeOutline} />
+                            </IonButton>
+                        </IonCol>
+                        <IonCol>
+                            <IonButton onClick={() => setShowAlert(true)} disabled={props.deleteDisabled} color="secondary" size="small" expand="block">
+                                <IonIcon slot="icon-only" icon={trashOutline} />
                             </IonButton>
                         </IonCol>
                     </IonRow>
                 </IonGrid>
-            </IonToolbar> */}
-            {/* <IonToolbar>
-                <IonTitle>{props.title}</IonTitle>
-            </IonToolbar> */}
+            </IonToolbar>
+            <AnimateFade expand={search} element={
+                <IonToolbar>
+                    <Search searchChange={props.searchChange} />
+                </IonToolbar>
+            } />
 
             <IonAlert
                 isOpen={showAlert}

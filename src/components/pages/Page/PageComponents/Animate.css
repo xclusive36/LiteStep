@@ -1,0 +1,31 @@
+@keyframes slide-in {
+    100% {
+        /* transform: scaleY(0); */
+        transform: translateY(0%)
+    }
+}
+
+.expanded {
+    transform: translateY(0%)
+}
+
+.collapsed {
+    /* transform: scaleY(0); */
+    transform: translateY(-100%);
+    transition: 400ms;
+}
+
+#expand-container {
+    overflow: hidden;
+}
+
+#expand-contract {
+    /* transform: scaleY(1); */
+    margin-top: -100%;
+    transition: 400ms;
+}
+
+#expand-contract.expanded {
+    /* transform: scaleY(0); */
+    margin-top: 0;
+}
