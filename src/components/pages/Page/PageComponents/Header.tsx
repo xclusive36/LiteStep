@@ -6,7 +6,7 @@ import AnimateFade from './Animate';
 import './Header.css';
 import Search from './Search';
 
-interface ContainerProps { title: string, delete: any, deleteDisabled: boolean, searchChange: any, reorderOption: any }
+interface ContainerProps { title: string, delete: any, deleteDisabled: boolean, searchChange: any, reorderOption: any, reorder: boolean }
 
 
 const PageHeader: React.FC<ContainerProps> = (props) => {
@@ -33,7 +33,7 @@ const PageHeader: React.FC<ContainerProps> = (props) => {
                             </IonButton>
                         </IonCol>
                         <IonCol>
-                            <IonButton onClick={props.reorderOption} size="small" color="danger" expand="block">
+                            <IonButton onClick={props.reorderOption} size="small" color={props.reorder ? 'danger' : 'dark'} expand="block">
                                 <IonIcon slot="icon-only" icon={reorderThreeOutline} />
                             </IonButton>
                         </IonCol>

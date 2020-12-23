@@ -1,4 +1,4 @@
-import { IonContent, IonList, IonPage, IonReorderGroup } from '@ionic/react';
+import { IonContent, IonLabel, IonList, IonListHeader, IonPage, IonReorderGroup } from '@ionic/react';
 import React, { useEffect, useRef, useState } from 'react';
 import { hapticsImpactLight, hapticsNotification } from '../../../capacitor/haptics';
 import { showBar } from '../../../capacitor/keyboard';
@@ -59,24 +59,29 @@ const Page: React.FC<HomePageProps> = (props) => {
                 deleteDisabled={categories.length === 0}
                 searchChange={(ev: any) => setSearchTerm(ev.detail.value?.toString() || '')}
                 reorderOption={() => setReorder(!reorder)}
+                reorder={reorder}
             />
             <IonContent className="ion-padding" ref={contentRef}>
-                <HeaderInput
-                    name={category.name}
-                    submit={(e: any) => {
-                        e.preventDefault();
-                        categoryNameSubmit(headerNameBackup);
-                    }}
-                    focus={() => {
-                        showBar();
-                        hapticsImpactLight();
-                    }}
-                    change={(e: any) => {
-                        setCategoryName(e.detail.value!);
-                        hapticsImpactLight();
-                    }}
-                />
+                <div className={ reorder ? 'ion-hide' : '' }>
+                    <HeaderInput
+                        name={category.name}
+                        submit={(e: any) => {
+                            e.preventDefault();
+                            categoryNameSubmit(headerNameBackup);
+                        }}
+                        focus={() => {
+                            showBar();
+                            hapticsImpactLight();
+                        }}
+                        change={(e: any) => {
+                            setCategoryName(e.detail.value!);
+                        }}
+                    />
+                </div>
                 <IonList lines="none">
+                    <IonListHeader lines="inset">
+                        <IonLabel>{category.name}</IonLabel>
+                    </IonListHeader>
                     <IonReorderGroup disabled={reorder} onIonItemReorder={ReorderItems}>
                         {filterItems(searchTerm, category.items).map((obj, index) => {
                             return (
