@@ -11,17 +11,13 @@ const ItemModal: React.FC<ContainerProps> = (props) => {
     const [showModal, setShowModal] = useState(false);
     const [item, setItem] = useState(itemSnapshot());
     const [showAlert, setShowAlert] = useState(false);
-    let inputRef: any; // Ref for quantity
 
     useEffect(() => {
         if(props.showModal) {
             setShowModal(true);
             setItem(itemSnapshot());
         }
-        setTimeout(() => {
-            inputRef?.setFocus();
-          }, 600);
-    }, [inputRef, props.showModal]);
+    }, [props.showModal]);
     
     const [hide, setHide] = useState(false);
 

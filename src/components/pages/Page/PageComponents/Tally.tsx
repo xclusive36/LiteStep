@@ -1,6 +1,6 @@
 import { IonButton, IonCard, IonCol, IonGrid, IonIcon, IonInput, IonItem, IonItemOption, IonItemOptions, IonItemSliding, IonReorder, IonRow, IonText } from '@ionic/react';
 import { addOutline, backspaceOutline, ellipsisVertical, removeOutline } from 'ionicons/icons';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { updateItem } from '../../../../Data/DataServiceComponent';
 import './Tally.css';
 
@@ -10,7 +10,7 @@ interface ContainerProps {
 }
 
 const PageTally: React.FC<ContainerProps> = (props) => {
-    let sliding: any;
+    let sliding = useRef<any>(null) //: any;
     const [deleteMe, setDeleteMe] = useState(false);
 
     const removeItem = () => {
@@ -23,9 +23,9 @@ const PageTally: React.FC<ContainerProps> = (props) => {
 
     return (
         <div className={props.hide()}>
-            <IonItemSliding ref={(r) => sliding = r}>
-                <IonItemOptions side="start" onIonSwipe={() => {sliding?.closeOpened();updateItem(props.obj);props.openModal()}}>
-                    <IonItemOption onClick={() => {sliding.closeOpened();updateItem(props.obj)}} color="primary" expandable>
+            <IonItemSliding ref={sliding}>
+                <IonItemOptions side="start" onIonSwipe={() => {sliding.current.closeOpened();updateItem(props.obj);props.openModal()}}>
+                    <IonItemOption onClick={() => {sliding.current.closeOpened();updateItem(props.obj);props.openModal()}} color="primary" expandable>
                     <IonIcon slot="icon-only" icon={ellipsisVertical} />
                     </IonItemOption>
                 </IonItemOptions>
@@ -44,8 +44,8 @@ const PageTally: React.FC<ContainerProps> = (props) => {
                                 </IonButton>
                             </IonCol>
                             <IonCol>
-                                <IonCard className="ion-text-center">
-                                    <IonInput  tabIndex={2}
+                                <IonCard color="white" className="ion-text-center">
+                                    <IonInput tabIndex={2}
                                         className="countinput ion-text-center"
                                         value={props.obj.count}
                                         type="tel"
@@ -69,8 +69,8 @@ const PageTally: React.FC<ContainerProps> = (props) => {
                     <IonReorder slot="end" />
                 </IonItem>
 
-                <IonItemOptions side="end" onIonSwipe={() => {sliding.closeOpened();removeItem();}}>
-                    <IonItemOption color="danger" onClick={() => {sliding.closeOpened();removeItem();}} expandable>
+                <IonItemOptions side="end" onIonSwipe={() => {sliding.current.closeOpened();removeItem();}}>
+                    <IonItemOption color="danger" onClick={() => {sliding.current.closeOpened();removeItem();}} expandable>
                         <IonIcon slot="icon-only" icon={backspaceOutline} />
                     </IonItemOption>
                 </IonItemOptions>

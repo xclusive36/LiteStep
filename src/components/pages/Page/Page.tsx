@@ -37,7 +37,7 @@ const Page: React.FC<HomePageProps> = (props) => {
     headerNameBackup.push(category.name);
     updateJunk(headerNameBackup);
   
-    let contentRef: any = useRef(null);
+    let contentRef = useRef<any>(null);
   
     useEffect(() => {
         const subscription = getPackagesObs().subscribe(result => setCategories(result));
