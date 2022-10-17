@@ -1,0 +1,77 @@
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        height: 0;
+    }
+    to {
+        opacity: 1;
+        height: auto;
+    }
+}
+
+@keyframes fade-out {
+    from {
+        display: block;
+    }
+    to {
+        display: none;
+    }
+}
+
+.header-title {
+    font-weight: 600 !important;
+    font-size: 1.2rem !important;
+}
+
+.title-large {
+    min-width: 100%;
+    font-weight: 600 !important;
+    font-size: 1.2rem !important;
+    text-align: start;
+}
+
+ion-item.tally-item {
+    --padding-start: 0px;
+    --inner-padding-end: 0px;
+}
+
+ion-item.fadeOut {
+    margin-top: -100%;
+    transition: all 1s;
+}
+
+ion-item.fadeIn {
+    margin-top: 0;
+    transition: all 1s;
+}
+
+ion-button:focus {
+    outline: none;
+}
+
+.sc-ion-input-ios-h {
+    --padding-end: 0px;
+}
+
+.countinput {
+    --padding-start: 0.4rem;
+    font-size: x-large;
+}
+
+.label {
+    font-size: small;
+    font-weight: 600;
+}
+
+.sublabel {
+    font-size: x-small !important;
+}
+
+.item-count {
+    margin: 0;
+}
+
+.deleteMe {
+    transform: translateX(100vw);
+    opacity: 0;
+}

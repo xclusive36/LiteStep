@@ -1,8 +1,8 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'LiteStepV3',
+  appId: 'com.litestep.litestep',
+  appName: 'LiteStep',
   webDir: 'build',
   bundledWebRuntime: false
 };

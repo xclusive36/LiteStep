@@ -1,0 +1,11 @@
+.header-title {
+    font-weight: 600 !important;
+    font-size: 1.2rem !important;
+}
+
+.title-large {
+    min-width: 100%;
+    font-weight: 600 !important;
+    font-size: 1.2rem !important;
+    text-align: start;
+}

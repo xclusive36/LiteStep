@@ -1,0 +1,11 @@
+.copyright {
+    font-size: 12px;
+    font-weight: 500;
+    margin: auto;
+    font-family: inherit;
+}
+
+.copyright-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
